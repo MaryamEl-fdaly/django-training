@@ -75,9 +75,14 @@ Result:
 ...     list.append(i.artist)
 ...     list.append(i.name)
 >>> print(list)
+OR
+>>> artists = Artist.objects.all()    
+>>> for artist in artists:
+...     artist.album_set.all()
 Result:
     [<Artist: Hamaki>, 'MaBlash', <Artist: Maroon5>, 'Memories', <Artist: Nancy>, 'Yala', <Artist: Ramy>, 'Shaif Nafsk', <Artist: Tamer>, 'Hdl3ny', <Artist: Tamer>, 'MshMohtam']
 11.  list down all albums ordered by cost then by name
 >>> Album.objects.all().order_by('cost','name')  
 Result:
     <QuerySet [<Album: Yala>, <Album: MshMohtam>, <Album: Hdl3ny>, <Album: MaBlash>, <Album: Shaif Nafsk>, <Album: Memories>]>
+
