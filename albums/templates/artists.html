@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<heed>
+    <style>
+        .Artist{
+            display: inline-block;
+            margin-left: 30px; 
+            color: indigo; 
+            
+        }
+        .albums {
+            display: inline-block;
+            margin-left: 60px;
+            color:orchid;
+            }
+    </style>
+</heed>
+<html>
+    Artist:
+       {% for i in all %} 
+            <br>
+            <div class="Artist">* id: {{i.id}}</div> <br>
+            <div class="Artist">* Stage name: {{i.stage_name}}</div> <br>
+            <div class="Artist">* Social:{{i.social_link}}</div> <br>
+            <div class="Artist">* Albums: </div><br>
+            {%for j in i.albums %}
+                <div class="albums">* id: {{j.id}}</div><br>
+                <div class="albums">* Name: {{j.name}} </div><br>
+                <div class="albums">* Creation time: {{j.creation_datetime}}</div><br>
+                <div class="albums">* Release Datetime: {{j.release_datetime}}</div><br>
+                <div class="albums">* Cost: {{j.cost}} </div><br>
+            <div class="Artist">*---</div><br>
+                
+            {% endfor %}
+        {% endfor %}
+</html>
